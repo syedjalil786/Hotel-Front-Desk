@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Front Desk</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { margin:0; font-family: system-ui,Segoe UI,Roboto,Arial; background:#f6f7fb; color:#0f172a; }
+    main#app { max-width:1400px; margin:12px auto; padding:12px; }
+    nav#nav { display:flex; gap:22px; align-items:center; padding:14px 22px; background:#fff; border-bottom:1px solid #e5e7eb; position:sticky; top:0; z-index:10 }
+    nav#nav a { color:#374151; text-decoration:none; font-weight:600 }
+    nav#nav a:hover{ color:#2563eb }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="#/dashboard">Dashboard</a>
+    <a href="#/check-in">Check In</a>
+    <a href="#/inhouse">In House Guests</a>
+    <a href="#/payments">Payments</a>
+    <a href="#/add-order">Add Orders</a>
+    <a href="#/expenses">Expenses</a>
+    <a href="#/checkout">Check Out</a>
+    <a href="#/rooms">Rooms</a>
+    <a href="#/reports">Reports</a>
+    <a href="#/settings">Settings</a>
+    <a href="#/guests">Guests</a>
+  </nav>
+
+  <script src="tabs/print-checkin-form.js?v=4"></script>
+  <script src="tabs/checkin-print-hook.js?v=4"></script>
+
+  <main id="app" role="main"></main>
+
+  <script type="module" src="./main.js?v=4"></script>
+</body>
+</html>
