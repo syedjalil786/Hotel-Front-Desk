@@ -1,0 +1,293 @@
+<section class="card" data-view="settings">
+    <h2 style="margin:0">Settings</h2>
+    <p class="muted" id="set-msg" aria-live="polite"></p>
+
+    <div class="set-actions">
+        <button class="btn" id="set-save-top" type="button">Save Changes</button>
+        <button class="btn ghost" id="set-export-settings" type="button">Export Settings</button>
+        <label class="btn ghost file-label">
+            Import Settings
+            <input type="file" id="set-import-settings" accept=".json" />
+        </label>
+    </div>
+
+    <!-- GENERAL -->
+    <h3>General</h3>
+    <div class="grid">
+        <label>
+            Hotel Name
+            <input class="input" id="hotelName" placeholder="Your hotel name" />
+        </label>
+        <label>
+            Phone
+            <input class="input" id="phone" placeholder="+92 300 0000000" />
+        </label>
+        <label>
+            Email
+            <input class="input" id="email" type="email" placeholder="info@hotel.com" />
+        </label>
+        <label>
+            Website
+            <input class="input" id="website" placeholder="https://your-hotel.com" />
+        </label>
+        <label class="full">
+            Address
+            <textarea class="input" id="address" rows="2" placeholder="Street, City, Country"></textarea>
+        </label>
+    </div>
+
+    <!-- MONEY / LOCALE -->
+    <h3>Money &amp; Locale</h3>
+    <div class="grid">
+        <label>
+            Currency
+            <select class="input" id="currency">
+                <option value="INR">INR — Indian Rupee</option>
+                <option value="PKR">PKR — Pakistani Rupee</option>
+                <option value="USD">USD — US Dollar</option>
+                <option value="AED">AED — UAE Dirham</option>
+                <option value="SAR">SAR — Saudi Riyal</option>
+                <option value="EUR">EUR — Euro</option>
+                <option value="GBP">GBP — Pound Sterling</option>
+            </select>
+        </label>
+        <label>
+            Currency Label
+            <input class="input" id="currencyLabel" placeholder="Rs" />
+        </label>
+        <label>
+            Locale
+            <select class="input" id="locale">
+                <option value="en-PK">English (Pakistan)</option>
+                <option value="en-IN">English (India)</option>
+                <option value="en-US">English (US)</option>
+                <option value="en-GB">English (UK)</option>
+                <option value="en-AE">English (UAE)</option>
+            </select>
+        </label>
+        <label>
+            Date Format (display)
+            <input class="input" id="dateFormat" placeholder="YYYY-MM-DD" />
+        </label>
+        <label>
+            Time Format (display)
+            <input class="input" id="timeFormat" placeholder="HH:mm" />
+        </label>
+    </div>
+
+    <!-- TAX / CHARGES -->
+    <h3>Taxes &amp; Charges</h3>
+    <div class="grid">
+        <label>
+            Tax % (e.g., GST)
+            <input class="input" id="taxRate" type="number" step="0.01" min="0" max="100" placeholder="0" />
+        </label>
+        <label>
+            Service %
+            <input class="input" id="svcRate" type="number" step="0.01" min="0" max="100" placeholder="0" />
+        </label>
+        <label>
+            Discount Mode
+            <select class="input" id="discountMode">
+                <option value="percent">Percentage</option>
+                <option value="flat">Flat</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- SEQUENCES -->
+    <h3>Numbering / Sequences</h3>
+    <div class="grid">
+        <label>
+            Invoice Prefix
+            <input class="input" id="invPrefix" placeholder="INV-" />
+        </label>
+        <label>
+            Next Invoice #
+            <input class="input" id="invNext" type="number" min="1" />
+        </label>
+        <label>
+            Receipt Prefix
+            <input class="input" id="recPrefix" placeholder="RCT-" />
+        </label>
+        <label>
+            Next Receipt #
+            <input class="input" id="recNext" type="number" min="1" />
+        </label>
+    </div>
+
+    <!-- DEFAULTS -->
+    <h3>Defaults</h3>
+    <div class="grid">
+        <label>
+            Default Check-out Time
+            <input class="input" id="checkoutTime" type="time" />
+        </label>
+        <label>
+            Default Room Rent
+            <input class="input" id="defRoomRent" type="number" step="0.01" min="0" />
+        </label>
+        <label>
+            Default Persons
+            <input class="input" id="defPersons" type="number" min="1" />
+        </label>
+    </div>
+
+    <!-- PDF BRANDING -->
+    <h3>Invoice / PDF Branding</h3>
+    <div class="grid">
+        <label>
+            Show Logo on PDF
+            <select class="input" id="pdfShowLogo">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
+        <label>
+            Header Color
+            <input class="input" id="pdfHeaderColor" type="color" />
+        </label>
+        <label>
+            Accent Color
+            <input class="input" id="pdfAccentColor" type="color" />
+        </label>
+        <label>
+            Font Size (pt)
+            <input class="input" id="pdfFontSize" type="number" min="8" max="18" />
+        </label>
+        <label>
+            Page Size
+            <select class="input" id="pdfPageSize">
+                <option>A4</option>
+                <option>Letter</option>
+            </select>
+        </label>
+        <label>
+            Margins (Top)
+            <input class="input" id="pdfMarginTop" type="number" min="5" max="50" />
+        </label>
+        <label>
+            Margins (Left/Right)
+            <input class="input" id="pdfMarginLR" type="number" min="5" max="50" />
+        </label>
+        <label>
+            Show Tax Breakup
+            <select class="input" id="pdfShowTax">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
+        <label>
+            Watermark Text
+            <input class="input" id="pdfWatermarkText" placeholder="PAID / DRAFT / COPY" />
+        </label>
+        <label>
+            Watermark On
+            <select class="input" id="pdfWatermarkOn">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </label>
+
+        <div class="uploader">
+            <div class="u-title">Logo</div>
+            <div class="u-row">
+                <img id="logoPreview" alt="Logo preview" />
+                <div class="u-ctrls">
+                    <label class="btn ghost file-label">
+                        Upload Logo
+                        <input type="file" id="logoFile" accept="image/*" />
+                    </label>
+                    <button class="btn ghost" id="logoRemove" type="button">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="uploader">
+            <div class="u-title">Authorized Signature</div>
+            <div class="u-row">
+                <img id="signPreview" alt="Signature preview" />
+                <div class="u-ctrls">
+                    <label class="btn ghost file-label">
+                        Upload Signature
+                        <input type="file" id="signFile" accept="image/*" />
+                    </label>
+                    <button class="btn ghost" id="signRemove" type="button">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <label class="full">
+            Invoice Title
+            <input class="input" id="invoiceTitle" placeholder="TAX INVOICE" />
+        </label>
+        <label class="full">
+            Terms / Notes
+            <textarea class="input" id="invoiceTerms" rows="3" placeholder="Payment terms, thanks message, policy…"></textarea>
+        </label>
+        <label class="full">
+            Footer Note
+            <textarea class="input" id="invoiceFooter" rows="2" placeholder="Footer text printed at the bottom"></textarea>
+        </label>
+    </div>
+
+    <div class="pdf-preview">
+        <div class="pdf-head">
+            <img id="pdf-prev-logo" alt="" />
+            <div class="pdf-hotel">
+                <div class="pdf-title" id="pdf-prev-hotel">Hotel Name</div>
+                <div class="pdf-sub" id="pdf-prev-sub">Address • Phone • Email</div>
+            </div>
+            <div class="pdf-doc" id="pdf-prev-doc">TAX INVOICE</div>
+        </div>
+        <div class="pdf-body">
+            <table>
+                <thead>
+                    <tr><th>Item</th><th>Qty</th><th>Rate</th><th>Total</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Room Rent</td><td>2</td><td>Rs 3,000</td><td>Rs 6,000</td></tr>
+                    <tr><td>Food Orders</td><td>1</td><td>Rs 1,200</td><td>Rs 1,200</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="3" class="r">Sub Total</td><td>Rs 7,200</td></tr>
+                    <tr><td colspan="3" class="r">Tax</td><td>Rs 720</td></tr>
+                    <tr><td colspan="3" class="r">Service</td><td>Rs 72</td></tr>
+                    <tr class="grand"><td colspan="3" class="r">Grand</td><td>Rs 7,992</td></tr>
+                </tfoot>
+            </table>
+            <div class="pdf-terms" id="pdf-prev-terms">Payment within 7 days. Thank you!</div>
+            <div class="pdf-sign">
+                <span>Authorized Signature</span>
+                <img id="pdf-prev-sign" alt="" />
+            </div>
+        </div>
+        <div class="pdf-watermark" id="pdf-prev-wm">PAID</div>
+    </div>
+
+    <!-- RECEIPTS -->
+    <h3>Receipt / POS</h3>
+    <div class="grid">
+        <label>
+            Receipt Width (mm)
+            <input class="input" id="rcWidth" type="number" min="48" max="120" />
+        </label>
+        <label>
+            Show QR on Receipt
+            <select class="input" id="rcShowQR">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </label>
+        <label class="full">
+            QR Text / URL
+            <input class="input" id="rcQRText" placeholder="upi://pay?pa=..." />
+        </label>
+    </div>
+
+    <!-- SAVE / DANGER -->
+    <div class="set-actions">
+        <button class="btn" id="set-save-bot" type="button">Save Changes</button>
+        <button class="btn danger" id="set-reset" type="button">Reset Settings</button>
+    </div>
+</section>
